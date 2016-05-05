@@ -72,7 +72,17 @@ specialize
     openEHR-EHR-OBSERVATION.body_temperature.v1.0.0
 
 definition
-    OBSERVATION[id1.1]     -- Body temperature
+    OBSERVATION[id1.1] matches {    -- Body temperature
+        /protocol[id21]/items matches {
+            ELEMENT[id22.1] occurrences matches {0} matches {    -- Site of measurement
+                value matches {
+                    DV_CODED_TEXT[id64.1] matches {
+                        defining_code matches {[ac2]}
+                    }
+                }
+            }
+        }
+    }
 
 terminology
     term_definitions = <
@@ -81,17 +91,29 @@ terminology
                 text = <"Body temperature">
                 description = <"A measurement of the body temperature, which is a surrogate for the whole body temperature of the person.">
             >
+            ["id22.1"] = <
+                text = <"Site of measurement">
+                description = <"The anatomical site of measurement of the temperature">
+            >
         >
         ["de"] = <
             ["id1.1"] = <
                 text = <"Körpertemperatur">
                 description = <"Eine Messung der Körpertemperatur an einer bestimmten Stelle als Surrogat für den gesamten Körper der Person.">
             >
+            ["id22.1"] = <
+                text = <"Messstelle">
+                description = <"Die anatomische Stelle der Temperaturmessung">
+            >
         >
         ["sl"] = <
             ["id1.1"] = <
                 text = <"Telesna temperatura">
                 description = <"*A measurement of the body temperature, which is a surrogate for the whole body temperature of the person.(en)">
+            >
+            ["id22.1"] = <
+                text = <"Stran telesa">
+                description = <"*The anatomical site of measurement of the temperature(en)">
             >
         >
     >
