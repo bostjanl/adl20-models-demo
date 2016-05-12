@@ -1,0 +1,9 @@
+{
+  "templates" : [ {
+    "id" : "openEHR-EHR-COMPOSITION.vitals.v1.0.0",
+    "rmType" : "COMPOSITION",
+    "name" : "Temperature",
+    "path" : "templates/openEHR-EHR-COMPOSITION.vitals.v1.adlt",
+    "sha" : "8a1b1aa731079f7a5d93b3e398eb52e8d38f1e6c"
+  } ]
+}
